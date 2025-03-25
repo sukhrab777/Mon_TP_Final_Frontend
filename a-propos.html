@@ -37,6 +37,47 @@
         </nav>
     </header>
     <main>
+        <!--Barre de recherche-->
+        <section class="search-section">
+            <div class="search-container">
+                <input type="text" id="recipe-search" placeholder="Rechercher une recette...">
+                <button id="search-button">Rechercher</button>
+            </div>
+            <!--Filtres-->
+            <div class="filters-section" aria-label="Filtres de recettes">
+                <div class="filter-group">
+                    <h3>Catégorie</h3>
+                    <div class="filter-options">
+                        <label>
+                            <input type="checkbox" name="categorie" value="entree">Entrée
+                        </label>
+                        <label>
+                            <input type="checkbox" name="categorie" value="plat">Plat
+                        </label>
+                        <label>
+                            <input type="checkbox" name="categorie" value="desert">Dessert
+                        </label>
+                    </div>
+                </div>
+                <div class="filter-group">
+                    <h3>Niveau de difficulté</h3>
+                    <div class="filter-options">
+                        <label>
+                            <input type="checkbox" name="difficulty" value="facile">
+                            Facile
+                        </label>
+                        <label>
+                            <input type="checkbox" name="difficulty" value="moyen">
+                            Moyen
+                        </label>
+                        <label>
+                            <input type="checkbox" name="difficulty" value="difficile">
+                            Difficile
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </section>
         <!-- Section À propos -->
         <section class="about-section" aria-label="À propos de Gourmetch">
             <h2>À propos de Gourmetch</h2>
@@ -107,7 +148,6 @@
         <nav class="footer-nav">
             <ul>
                 <li><a href="index.html">Accueil</a></li>
-                <li><a href="ajouter-recette.html">Ajouter une recette</a></li>
                 <li><a href="favoris.html">Mes favoris</a></li>
                 <li><a href="a-propos.html">À propos</a></li>
             </ul>
