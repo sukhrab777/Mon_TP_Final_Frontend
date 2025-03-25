@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GourmeTech-Favoris</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/scripts.js" defer></script>
+    <script src="js/autres_fichiers.js" defer></script>
+</head>
+
+<body>
+    <!-- Header-->
+    <header>
+        <div class="header-container">
+            <div class="logo-container">
+                <div class="logo">G</div>
+                <h1><a href="index.html" aria-label="Retour à la page d'accueil"></a>Gourmetch</h1>
+            </div>
+            <div class="header-action">
+                <button id="menu-toggle" aria-label="Changer de thème">
+                    <span class="moon-icon">🌙</span>
+                </button>
+                <button id="menu-toggle" aria-label="Menu de navigation">
+                    <span class="menu-icon">☰</span>
+                </button>
+            </div>
+        </div>
+        <nav id="main-nav" class="hidden">
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="ajouter-recette.html">Ajouter une recette</a></li>
+                <li><a href="favoris.html">Mes favoris</a></li>
+                <li><a href="a-propos.html">A propos</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <!-- Section des favoris -->
+        <section class="favorites-section" aria-label="Mes recettes favorites">
+            <h2>Mes favoris</h2>
+            <!-- Message si aucun favori -->
+            <p id="no-favorites-message">Aucune recette favorite pour le moment.</p>
+            <!-- Liste des favoris (sera remplie dynamiquement par JavaScript) -->
+            <div class="favorites-grid" id="favorites-grid">
+                <!-- Exemple de carte de favori (sera généré dynamiquement) -->
+                <article class="recipes-card" data-id="1">
+                    <div class="recipe-image-container">
+                        <img src="assets/images/tarte aux pommes.jpg" alt="Tarte aux pommes">
+                        <button class="remove-favorite" aria-label="Retirer des favoris">✖</button>
+                    </div>
+                    <div class="recipe-details">
+                        <h2>Tarte aux pommes</h2>
+                        <div class="recipe-tags">
+                            <span class="tag category">Dessert</span>
+                            <span class="tag time">60 min</span>
+                            <span class="tag difficulty">Facile</span>
+                        </div>
+                        <a href="recette.html" class="btn-voir-recette">Voir la recette</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer (identique à index.html) -->
+    <footer>
+        <nav class="footer-nav">
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="ajouter-recette.html">Ajouter une recette</a></li>
+                <li><a href="favoris.html">Mes favoris</a></li>
+                <li><a href="a-propos.html">À propos</a></li>
+            </ul>
+        </nav>
+        <div class="footer-about">
+            <p>Gourmetch - Plateforme de recettes culinaires</p>
+            <p>© 2025 Tous droits reservés</p>
+        </div>
+    </footer>
+</body>
+
+</html>
