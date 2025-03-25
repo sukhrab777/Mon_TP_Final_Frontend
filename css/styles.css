@@ -1,28 +1,71 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
+/* === Variables CSS === */
+:root {
+    /* Couleurs */
+    --orange: #f5a623; /* Pour les boutons et badges "Catégorie" */
+    --green: #28a745; /* Pour les badges "Temps" */
+    --blue: #17a2b8; /* Pour les badges "Difficulté" */
+    --text-color: #333; /* Texte principal */
+    --background-color: #f9f9f9; /* Fond général */
+    --white: #fff; /* Fond des cartes et sections */
+    --shadow: rgba(0, 0, 0, 0.1); /* Ombre légère */
+
+    /* Polices */
+    --font-family: Arial, sans-serif;
+    --font-size: 16px;
+
+    /* Espacements */
+    --space-small: 10px;
+    --space-medium: 15px;
+    --space-large: 20px;
+}
+/* === Header === */
+header {
+    background-color: var(--white);
+    padding: var(--space-medium);
+    box-shadow: 0 2px 5px var(--shadow);
 }
 
-header img {
-    width: 100%;
-    height: auto;
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-main {
-    padding: 20px;
-    text-align: center;
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: var(--space-small);
 }
 
-h1 {
-    color: #333;
+.logo {
+    width: 30px;
+    height: 30px;
+    background-color: var(--orange);
+    color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
 }
 
-footer {
-    background-color: #f4f4f4;
-    padding: 10px;
-    text-align: center;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+.logo-container h1 {
+    font-size: 20px;
+    color: var(--text-color);
+}
+
+.header-action {
+    display: flex;
+    gap: var(--space-small);
+}
+
+#menu-toggle {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+nav {
+    display: none; /* Caché par défaut sur mobile */
 }
