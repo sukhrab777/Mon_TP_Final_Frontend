@@ -1,11 +1,132 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>GourmeTech - Recettes</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/scripts.js" defer></script>
+    <script src="js/autres_fichiers.js" defer></script>
 </head>
+
 <body>
-    
+    <!-- Header-->
+    <header>
+        <div class="header-container">
+            <div class="logo-container">
+                <div class="logo">G</div>
+                <h1><a href="index.html" aria-label="Retour à la page d'accueil"></a>Gourmetch</h1>
+            </div>
+            <div class="header-action">
+                <button id="menu-toggle" aria-label="Changer de thème">
+                    <span class="moon-icon">🌙</span>
+                </button>
+                <button id="menu-toggle" aria-label="Menu de navigation">
+                    <span class="menu-icon">☰</span>
+                </button>
+            </div>
+        </div>
+        <nav id="main-nav" class="hidden">
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="ajouter-recette.html">Ajouter une recette</a></li>
+                <li><a href="favoris.html">Mes favoris</a></li>
+                <li><a href="a-propos.html">A propos</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <!--Details de la recette-->
+        <section class="recipe-details" aria-label="Details de la recette">
+            <div class="recipe-image-container">
+                <img src="assets/images/tarte aux pommes.jpg" alt="tarte aux pommes">
+            </div>
+            <div class="recipe-info">
+                <h2>Tarte aux pommes</h2>
+                <div class="recipe-tags">
+                    <span class="tag category">Dessert</span>
+                    <span class="tag time">60 min</span>
+                    <span class="tag difficulty">Facile</span>
+                    <span class="tag servings">4 personnes</span>
+                </div>
+                <button class="favorite-toggle" aria-label="Ajouter aux favoris">♡</button>
+            </div>
+            <!-- Liste des ingrédients -->
+            <div class="ingredients">
+                <h3>ingredients</h3>
+                <ul>
+                    <li>5 pommes (environ 600g)</li>
+                    <li>1 pâte brisée (250g)</li>
+                    <li>50g de sucre</li>
+                    <li>20g de beurre</li>
+                    <li>1 cuillère à soupe de cannelle (optionnel)</li>
+                </ul>
+            </div>
+            <!-- Étapes de préparation -->
+            <div class="preparation-steps">
+                <h3>Étapes de préparation</h3>
+                <ol>
+                    <li>Préchauffer le four à 180°C.</li>
+                    <li>Éplucher et couper les pommes en tranches fines.</li>
+                    <li>Étaler la pâte brisée dans un moule à tarte.</li>
+                    <li>Disposer les tranches de pommes en rosace sur la pâte.</li>
+                    <li>Saupoudrer de sucre et de cannelle, puis ajouter des noisettes de beurre.</li>
+                    <li>Cuire au four pendant 45 minutes, jusqu'à ce que la pâte soit dorée.</li>
+                </ol>
+                <!-- Suggestions de recettes similaires -->
+                <div class="suggestions">
+                    <h3>Recettes similaires</h3>
+                    <div class="suggestions-grid">
+                        <article class="recipes-card">
+                            <div class="recipe-image-container">
+                                <img src="assets/images/ratatouille_provencale.jpg" alt="Ratatouille provençale">
+                                <button class="favorite-toggle" aria-label="Ajouter aux favoris">♡</button>
+                            </div>
+                            <div class="recipe-details">
+                                <h2>Ratatouille provençale</h2>
+                                <div class="recipe-tags">
+                                    <span class="tag category">Plat</span>
+                                    <span class="tag time">45 min</span>
+                                    <span class="tag difficulty">Moyen</span>
+                                </div>
+                                <a href="recette.html" class="btn-voir-recette">Voir la recette</a>
+                            </div>
+                        </article>
+                        <article class="recipes-card">
+                            <div class="recipe-image-container">
+                                <img src="assets/images/veloute_de_potiron.jpg" alt="Velouté de potiron">
+                                <button class="favorite-toggle" aria-label="Ajouter aux favoris">♡</button>
+                            </div>
+                            <div class="recipe-details">
+                                <h2>Velouté de potiron</h2>
+                                <div class="recipe-tags">
+                                    <span class="tag category">Entrée</span>
+                                    <span class="tag time">30 min</span>
+                                    <span class="tag difficulty">Facile</span>
+                                </div>
+                                <a href="recette.html" class="btn-voir-recette">Voir la recette</a>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+        </section>
+    </main>
+    <footer>
+        <!--La navigation du footer-->
+        <nav class="footer-nav">
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="ajouter-recette.html">Ajouter une recette</a></li>
+                <li><a href="favoris.html">Mes favoris</a></li>
+                <li><a href="a-propos.html">À propos</a></li>
+            </ul>
+        </nav>
+        <div class="footer-about">
+            <p>Gourmetch - Plateforme de recettes culinaires</p>
+            <p>&copy; 2025 Tous droits reservés</p>
+        </div>
+    </footer>
 </body>
+
 </html>
