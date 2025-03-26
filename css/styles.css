@@ -10,8 +10,15 @@
     --shadow: rgba(0, 0, 0, 0.1); /* Ombre légère */
 
     /* Polices */
-    --font-family: Arial, sans-serif;
+    --font-family: 'Roboto', sans-serif; /* Utiliser Roboto */
     --font-size: 16px;
+}
+
+/* Appliquer la police à tout le document */
+body {
+    font-family: var(--font-family);
+    font-size: var(--font-size);
+    background-color: var(--background-color);
 }
 
 /* === Header === */
@@ -78,6 +85,11 @@ nav a {
 
 nav a:hover {
     color: var(--orange);
+}
+
+nav a.active {
+    color: var(--orange); /* Style pour le lien actif */
+    font-weight: bold;
 }
 
 /* === Barre de recherche === */
@@ -290,64 +302,7 @@ footer {
     font-size: 12px;
     color: #666;
 }
-/* === Détails de la recette === */
-.recipe-details {
-    background-color: var(--white);
-    padding: 15px;
-    margin: 15px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px var(--shadow);
-}
 
-.recipe-info {
-    text-align: center;
-}
-
-.recipe-info h2 {
-    font-size: 20px;
-    font-weight: bold;
-    margin-bottom: 10px;
-}
-
-.ingredients {
-    margin-top: 15px;
-}
-
-.ingredients h3 {
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 10px;
-}
-
-.ingredients ul {
-    padding-left: 20px; /* Indentation pour les puces */
-    list-style-type: disc; /* Puces rondes */
-}
-
-.ingredients li {
-    font-size: 16px;
-    margin-bottom: 5px;
-}
-
-.preparation-steps {
-    margin-top: 15px;
-}
-
-.preparation-steps h3 {
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 10px;
-}
-
-.preparation-steps ol {
-    padding-left: 20px; /* Indentation pour les numéros */
-    list-style-type: decimal; /* Numéros */
-}
-
-.preparation-steps li {
-    font-size: 16px;
-    margin-bottom: 5px;
-}
 /* === Détails de la recette (recette.html) === */
 .recipe-details {
     background-color: var(--white);
@@ -422,6 +377,20 @@ footer {
 .suggestions {
     padding: 15px;
 }
+
+.suggestions h3 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.suggestions-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
 /* === Section des favoris (favoris.html) === */
 .favorites-section {
     background-color: var(--white);
@@ -441,9 +410,10 @@ footer {
 
 #no-favorites-message {
     font-size: 16px;
-    color: #666; /* Couleur plus claire pour le message */
+    color: #666;
     margin-top: 10px;
 }
+
 /* === Section À propos (a-propos.html) === */
 .about-section {
     background-color: var(--white);
@@ -522,7 +492,7 @@ footer {
 }
 
 .faq-answer:not([hidden]) {
-    max-height: 200px; /* Ajuste selon le contenu */
+    max-height: 200px;
     padding: 10px;
 }
 
@@ -578,7 +548,7 @@ footer {
 }
 
 .form-group textarea {
-    resize: vertical; /* Permet de redimensionner verticalement uniquement */
+    resize: vertical;
 }
 
 #contact-form button {
@@ -593,8 +563,9 @@ footer {
 }
 
 #contact-form button:hover {
-    background-color: #e6951e; /* Légère variation de l’orange au survol */
+    background-color: #e6951e;
 }
+
 /* === Responsive Design === */
 
 /* Tablette (769px - 1024px) */
@@ -602,12 +573,12 @@ footer {
     /* Grille de recettes */
     .recipes-grid,
     .suggestions-grid {
-        padding: 10px; /* Réduire le padding */
+        padding: 10px;
     }
 
     .recipes-card {
-        max-width: 500px; /* Limiter la largeur des cartes */
-        margin: 0 auto; /* Centrer les cartes */
+        max-width: 500px;
+        margin: 0 auto;
     }
 
     /* Formulaire de contact */
@@ -617,22 +588,32 @@ footer {
 
     .form-group input,
     .form-group textarea {
-        font-size: 14px; /* Réduire la taille du texte */
+        font-size: 14px;
+    }
+
+    /* Suggestions */
+    .suggestions {
+        padding: 10px;
+    }
+
+    .suggestions h3 {
+        font-size: 18px;
     }
 }
+
 /* Mobile (768px et moins) */
 @media (max-width: 768px) {
     /* Header */
     nav {
-        display: none; /* Cacher la navigation par défaut */
+        display: none;
     }
 
     nav[hidden] {
-        display: none; /* S'assurer que hidden fonctionne */
+        display: none;
     }
 
     nav:not([hidden]) {
-        display: block; /* Afficher la navigation quand elle n’est pas cachée */
+        display: block;
         position: absolute;
         top: 60px;
         left: 0;
@@ -669,7 +650,7 @@ footer {
     }
 
     #menu-toggle[aria-label="Changer de thème"] {
-        display: none; /* Optionnel : cacher le bouton de thème */
+        display: none;
     }
 
     /* Barre de recherche */
@@ -823,6 +804,15 @@ footer {
 
     #no-favorites-message {
         font-size: 14px;
+    }
+
+    /* Suggestions (recette.html) */
+    .suggestions {
+        padding: 10px;
+    }
+
+    .suggestions h3 {
+        font-size: 18px;
     }
 
     /* Footer */
