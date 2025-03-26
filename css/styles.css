@@ -12,16 +12,12 @@
     /* Polices */
     --font-family: Arial, sans-serif;
     --font-size: 16px;
-
-    /* Espacements */
-    --space-small: 10px;
-    --space-medium: 15px;
-    --space-large: 20px;
 }
+
 /* === Header === */
 header {
     background-color: var(--white);
-    padding: var(--space-medium);
+    padding: 15px;
     box-shadow: 0 2px 5px var(--shadow);
 }
 
@@ -34,7 +30,7 @@ header {
 .logo-container {
     display: flex;
     align-items: center;
-    gap: var(--space-small);
+    gap: 10px;
 }
 
 .logo {
@@ -56,7 +52,7 @@ header {
 
 .header-action {
     display: flex;
-    gap: var(--space-small);
+    gap: 10px;
 }
 
 #menu-toggle {
@@ -67,5 +63,781 @@ header {
 }
 
 nav {
-    display: none; /* Caché par défaut sur mobile */
+    display: block; /* Visible par défaut sur desktop */
+}
+
+nav ul {
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    color: var(--text-color);
+    font-size: 16px;
+}
+
+nav a:hover {
+    color: var(--orange);
+}
+
+/* === Barre de recherche === */
+.search-section {
+    background-color: var(--white);
+    padding: 15px;
+    margin: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px var(--shadow);
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+}
+
+.search-container input {
+    flex: 1;
+    padding: 8px;
+    margin: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px 0 0 5px;
+    font-size: 16px;
+}
+
+.search-container button {
+    padding: 8px 15px;
+    background-color: var(--orange);
+    color: var(--white);
+    border: none;
+    border-radius: 0 5px 5px 0;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* === Filtres === */
+.filters-section {
+    background-color: var(--white);
+    padding: 15px;
+    margin: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px var(--shadow);
+}
+
+.filter-group {
+    margin-bottom: 15px;
+}
+
+.filter-group h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.filter-options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.filter-options label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 16px;
+}
+
+/* === Grille de recettes === */
+.recipes-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 15px;
+}
+
+.recipes-card {
+    background-color: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 2px 5px var(--shadow);
+    position: relative;
+}
+
+.recipe-image-container {
+    position: relative;
+}
+
+.recipe-image-container img {
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px 8px 0 0;
+}
+
+.favorite-toggle {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: #fff;
+    text-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+}
+
+.recipe-details {
+    padding: 10px;
+    text-align: center;
+}
+
+.recipe-details h2 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.recipe-tags {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.tag {
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 14px;
+    color: var(--white);
+}
+
+.tag.category {
+    background-color: var(--orange);
+}
+
+.tag.time {
+    background-color: var(--green);
+}
+
+.tag.difficulty {
+    background-color: var(--blue);
+}
+
+.btn-voir-recette {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--orange);
+    color: var(--white);
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* === Styles pour toutes les images === */
+img {
+    width: 100%;
+    display: block;
+}
+
+/* === Footer === */
+footer {
+    background-color: var(--white);
+    padding: 15px;
+    margin-top: 20px;
+    box-shadow: 0 -2px 5px var(--shadow);
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-nav {
+    text-align: left;
+}
+
+.footer-nav h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.footer-nav ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer-nav a {
+    color: var(--text-color);
+    font-size: 16px;
+}
+
+.footer-nav a:hover {
+    color: var(--orange);
+}
+
+.footer-about {
+    text-align: right;
+}
+
+.footer-about h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.footer-about p {
+    font-size: 14px;
+    margin-bottom: 5px;
+    line-height: 1.5;
+}
+
+.footer-about p:last-child {
+    margin-top: 10px;
+    font-size: 12px;
+    color: #666;
+}
+/* === Détails de la recette === */
+.recipe-details {
+    background-color: var(--white);
+    padding: 15px;
+    margin: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px var(--shadow);
+}
+
+.recipe-info {
+    text-align: center;
+}
+
+.recipe-info h2 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.ingredients {
+    margin-top: 15px;
+}
+
+.ingredients h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.ingredients ul {
+    padding-left: 20px; /* Indentation pour les puces */
+    list-style-type: disc; /* Puces rondes */
+}
+
+.ingredients li {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.preparation-steps {
+    margin-top: 15px;
+}
+
+.preparation-steps h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.preparation-steps ol {
+    padding-left: 20px; /* Indentation pour les numéros */
+    list-style-type: decimal; /* Numéros */
+}
+
+.preparation-steps li {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+/* === Détails de la recette (recette.html) === */
+.recipe-details {
+    background-color: var(--white);
+    padding: 15px;
+    margin: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px var(--shadow);
+}
+
+.recipe-info {
+    text-align: center;
+}
+
+.recipe-info h2 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.ingredients {
+    margin-top: 15px;
+}
+
+.ingredients h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.ingredients ul {
+    padding-left: 20px;
+    list-style-type: disc;
+}
+
+.ingredients li {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.preparation-steps {
+    margin-top: 15px;
+}
+
+.preparation-steps h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.preparation-steps ol {
+    padding-left: 20px;
+    list-style-type: decimal;
+}
+
+.preparation-steps li {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+/* === Accordéon pour les recettes === */
+.recipe-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
+
+.recipe-content:not([hidden]) {
+    max-height: 1000px;
+}
+
+/* === Suggestions (recette.html) === */
+.suggestions {
+    padding: 15px;
+}
+/* === Section des favoris (favoris.html) === */
+.favorites-section {
+    background-color: var(--white);
+    padding: 15px;
+    margin: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px var(--shadow);
+    text-align: center;
+}
+
+.favorites-section h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: var(--text-color);
+}
+
+#no-favorites-message {
+    font-size: 16px;
+    color: #666; /* Couleur plus claire pour le message */
+    margin-top: 10px;
+}
+/* === Section À propos (a-propos.html) === */
+.about-section {
+    background-color: var(--white);
+    padding: 15px;
+    margin: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px var(--shadow);
+    text-align: center;
+}
+
+.about-section h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: var(--text-color);
+}
+
+.about-section p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--text-color);
+}
+
+/* === Section FAQ (a-propos.html) === */
+.faq-section {
+    background-color: var(--white);
+    padding: 15px;
+    margin: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px var(--shadow);
+}
+
+.faq-section h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    text-align: center;
+    color: var(--text-color);
+}
+
+.faq-item {
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.faq-question {
+    background: none;
+    border: none;
+    width: 100%;
+    text-align: left;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--text-color);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.faq-question::after {
+    content: '▼';
+    font-size: 14px;
+    transition: transform 0.3s ease;
+}
+
+.faq-question[aria-expanded="true"]::after {
+    transform: rotate(180deg);
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    padding: 0 10px;
+}
+
+.faq-answer:not([hidden]) {
+    max-height: 200px; /* Ajuste selon le contenu */
+    padding: 10px;
+}
+
+.faq-answer p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--text-color);
+}
+
+/* === Section Formulaire de contact (a-propos.html) === */
+.contact-section {
+    background-color: var(--white);
+    padding: 15px;
+    margin: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px var(--shadow);
+}
+
+.contact-section h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    text-align: center;
+    color: var(--text-color);
+}
+
+#contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.form-group label {
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+.form-group input,
+.form-group textarea {
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.form-group textarea {
+    resize: vertical; /* Permet de redimensionner verticalement uniquement */
+}
+
+#contact-form button {
+    padding: 10px 20px;
+    background-color: var(--orange);
+    color: var(--white);
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    align-self: center;
+}
+
+#contact-form button:hover {
+    background-color: #e6951e; /* Légère variation de l’orange au survol */
+}
+/* === Responsive Design === */
+
+/* Tablette (769px - 1024px) */
+@media (max-width: 1024px) {
+    /* Grille de recettes */
+    .recipes-grid,
+    .suggestions-grid {
+        padding: 10px; /* Réduire le padding */
+    }
+
+    .recipes-card {
+        max-width: 500px; /* Limiter la largeur des cartes */
+        margin: 0 auto; /* Centrer les cartes */
+    }
+
+    /* Formulaire de contact */
+    .contact-section {
+        padding: 10px;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        font-size: 14px; /* Réduire la taille du texte */
+    }
+}
+/* Mobile (768px et moins) */
+@media (max-width: 768px) {
+    /* Header */
+    nav {
+        display: none; /* Cacher la navigation par défaut */
+    }
+
+    nav[hidden] {
+        display: none; /* S'assurer que hidden fonctionne */
+    }
+
+    nav:not([hidden]) {
+        display: block; /* Afficher la navigation quand elle n’est pas cachée */
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: var(--white);
+        box-shadow: 0 2px 5px var(--shadow);
+        z-index: 1000;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px;
+    }
+
+    nav a {
+        display: block;
+        padding: 10px;
+        font-size: 18px;
+        border-bottom: 1px solid #ddd;
+    }
+
+    nav a:last-child {
+        border-bottom: none;
+    }
+
+    #menu-toggle[aria-label="Menu de navigation"] {
+        display: block;
+    }
+
+    .menu-icon {
+        font-size: 24px;
+        color: var(--text-color);
+    }
+
+    #menu-toggle[aria-label="Changer de thème"] {
+        display: none; /* Optionnel : cacher le bouton de thème */
+    }
+
+    /* Barre de recherche */
+    .search-section {
+        padding: 10px;
+        margin: 10px;
+    }
+
+    .search-container input {
+        font-size: 14px;
+    }
+
+    .search-container button {
+        padding: 8px 10px;
+        font-size: 14px;
+    }
+
+    /* Filtres */
+    .filters-section {
+        padding: 10px;
+        margin: 10px;
+    }
+
+    .filter-group h3 {
+        font-size: 16px;
+    }
+
+    .filter-options label {
+        font-size: 14px;
+    }
+
+    /* Grille de recettes */
+    .recipes-grid,
+    .suggestions-grid {
+        padding: 5px;
+    }
+
+    .recipes-card {
+        max-width: 100%;
+    }
+
+    .recipe-image-container img {
+        height: 120px;
+    }
+
+    .recipe-details h2 {
+        font-size: 16px;
+    }
+
+    .recipe-tags {
+        gap: 5px;
+    }
+
+    .tag {
+        font-size: 12px;
+        padding: 4px 8px;
+    }
+
+    .btn-voir-recette {
+        font-size: 14px;
+        padding: 8px 15px;
+    }
+
+    /* Détails de la recette (recette.html) */
+    .recipe-details {
+        padding: 10px;
+        margin: 10px;
+    }
+
+    .recipe-info h2 {
+        font-size: 18px;
+    }
+
+    .ingredients h3,
+    .preparation-steps h3 {
+        font-size: 16px;
+    }
+
+    .ingredients li,
+    .preparation-steps li {
+        font-size: 14px;
+    }
+
+    /* Section À propos (a-propos.html) */
+    .about-section {
+        padding: 10px;
+        margin: 10px;
+    }
+
+    .about-section h2 {
+        font-size: 20px;
+    }
+
+    .about-section p {
+        font-size: 14px;
+    }
+
+    /* Section FAQ (a-propos.html) */
+    .faq-section {
+        padding: 10px;
+        margin: 10px;
+    }
+
+    .faq-section h2 {
+        font-size: 20px;
+    }
+
+    .faq-question {
+        font-size: 16px;
+        padding: 8px;
+    }
+
+    .faq-answer p {
+        font-size: 14px;
+    }
+
+    /* Formulaire de contact (a-propos.html) */
+    .contact-section {
+        padding: 10px;
+        margin: 10px;
+    }
+
+    .contact-section h2 {
+        font-size: 20px;
+    }
+
+    .form-group label {
+        font-size: 14px;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        font-size: 14px;
+        padding: 6px;
+    }
+
+    #contact-form button {
+        font-size: 14px;
+        padding: 8px 15px;
+    }
+
+    /* Section Favoris (favoris.html) */
+    .favorites-section {
+        padding: 10px;
+        margin: 10px;
+    }
+
+    .favorites-section h2 {
+        font-size: 20px;
+    }
+
+    #no-favorites-message {
+        font-size: 14px;
+    }
+
+    /* Footer */
+    footer {
+        flex-direction: column;
+        text-align: center;
+        padding: 10px;
+    }
+
+    .footer-nav {
+        text-align: center;
+        margin-bottom: 15px;
+    }
+
+    .footer-about {
+        text-align: center;
+    }
 }

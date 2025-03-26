@@ -37,8 +37,8 @@
         </nav>
     </header>
     <main>
-         <!--Barre de recherche-->
-         <section class="search-section">
+        <!--Barre de recherche-->
+        <section class="search-section">
             <div class="search-container">
                 <input type="text" id="recipe-search" placeholder="Rechercher une recette...">
                 <button id="search-button">Rechercher</button>
@@ -83,41 +83,25 @@
             <h2>Mes favoris</h2>
             <!-- Message si aucun favori -->
             <p id="no-favorites-message">Aucune recette favorite pour le moment.</p>
-            <!-- Liste des favoris (sera remplie dynamiquement par JavaScript) -->
-            <div class="favorites-grid" id="favorites-grid">
-                <!-- Exemple de carte de favori (sera généré dynamiquement) -->
-                <article class="recipes-card" data-id="1">
-                    <div class="recipe-image-container">
-                        <img src="assets/images/tarte aux pommes.jpg" alt="Tarte aux pommes">
-                        <button class="remove-favorite" aria-label="Retirer des favoris">✖</button>
-                    </div>
-                    <div class="recipe-details">
-                        <h2>Tarte aux pommes</h2>
-                        <div class="recipe-tags">
-                            <span class="tag category">Dessert</span>
-                            <span class="tag time">60 min</span>
-                            <span class="tag difficulty">Facile</span>
-                        </div>
-                        <a href="recette.html" class="btn-voir-recette">Voir la recette</a>
-                    </div>
-                </article>
-            </div>
         </section>
     </main>
 
     <!-- Footer (identique à index.html) -->
     <footer>
-        <nav class="footer-nav">
+        <div class="footer-nav">
+            <h3>Navigation</h3>
             <ul>
                 <li><a href="index.html">Accueil</a></li>
                 <li><a href="ajouter-recette.html">Ajouter une recette</a></li>
                 <li><a href="favoris.html">Mes favoris</a></li>
                 <li><a href="a-propos.html">À propos</a></li>
             </ul>
-        </nav>
+        </div>
         <div class="footer-about">
-            <p>Gourmetch - Plateforme de recettes culinaires</p>
-            <p>© 2025 Tous droits reservés</p>
+            <h3>À propos de GourmeTech</h3>
+            <p>GourmeTech est une plateforme de recettes culinaires interactive développée dans le cadre d’un projet
+                pédagogique.</p>
+            <p>© 2025 GourmeTech - Tous droits réservés</p>
         </div>
     </footer>
 </body>

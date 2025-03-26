@@ -9,10 +9,14 @@
     <link rel="stylesheet" href="css/styles.css">
     <script src="js/scripts.js" defer></script>
     <script src="js/autres_fichiers.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
-    <!-- Header-->
+    <!-- Header -->
     <header>
         <div class="header-container">
             <div class="logo-container">
@@ -32,18 +36,19 @@
             <ul>
                 <li><a href="index.html">Accueil</a></li>
                 <li><a href="favoris.html">Mes favoris</a></li>
-                <li><a href="a-propos.html">A propos</a></li>
+                <li><a href="a-propos.html">À propos</a></li>
             </ul>
         </nav>
     </header>
+
     <main>
-        <!--Barre de recherche-->
+        <!-- Barre de recherche -->
         <section class="search-section">
             <div class="search-container">
                 <input type="text" id="recipe-search" placeholder="Rechercher une recette...">
                 <button id="search-button">Rechercher</button>
             </div>
-            <!--Filtres-->
+            <!-- Filtres -->
             <div class="filters-section" aria-label="Filtres de recettes">
                 <div class="filter-group">
                     <h3>Catégorie</h3>
@@ -63,25 +68,23 @@
                     <h3>Niveau de difficulté</h3>
                     <div class="filter-options">
                         <label>
-                            <input type="checkbox" name="difficulty" value="facile">
-                            Facile
+                            <input type="checkbox" name="difficulty" value="facile">Facile
                         </label>
                         <label>
-                            <input type="checkbox" name="difficulty" value="moyen">
-                            Moyen
+                            <input type="checkbox" name="difficulty" value="moyen">Moyen
                         </label>
                         <label>
-                            <input type="checkbox" name="difficulty" value="difficile">
-                            Difficile
+                            <input type="checkbox" name="difficulty" value="difficile">Difficile
                         </label>
                     </div>
                 </div>
             </div>
         </section>
-        <!--Details de la recette-->
-        <section class="recipe-details" aria-label="Details de la recette">
+
+        <!-- Détails de la recette : Tarte aux pommes -->
+        <section class="recipe-details" aria-label="Détails de la recette">
             <div class="recipe-image-container">
-                <img src="assets/images/tarte aux pommes.jpg" alt="tarte aux pommes">
+                <img src="assets/images/tarte aux pommes.jpg" alt="Tarte aux pommes">
             </div>
             <div class="recipe-info">
                 <h2>Tarte aux pommes</h2>
@@ -92,79 +95,177 @@
                     <span class="tag servings">4 personnes</span>
                 </div>
                 <button class="favorite-toggle" aria-label="Ajouter aux favoris">♡</button>
+                <button class="btn-voir-recette">Voir la recette</button>
             </div>
-            <!-- Liste des ingrédients -->
-            <div class="ingredients">
-                <h3>Ingredients</h3>
-                <ul>
-                    <li>5 pommes (environ 600g)</li>
-                    <li>1 pâte brisée (250g)</li>
-                    <li>50g de sucre</li>
-                    <li>20g de beurre</li>
-                    <li>1 cuillère à soupe de cannelle (optionnel)</li>
-                </ul>
-            </div>
-            <!-- Étapes de préparation -->
-            <div class="preparation-steps">
-                <h3>Étapes de préparation</h3>
-                <ol>
-                    <li>Préchauffer le four à 180°C.</li>
-                    <li>Éplucher et couper les pommes en tranches fines.</li>
-                    <li>Étaler la pâte brisée dans un moule à tarte.</li>
-                    <li>Disposer les tranches de pommes en rosace sur la pâte.</li>
-                    <li>Saupoudrer de sucre et de cannelle, puis ajouter des noisettes de beurre.</li>
-                    <li>Cuire au four pendant 45 minutes, jusqu'à ce que la pâte soit dorée.</li>
-                </ol>
-                <!-- Suggestions de recettes similaires -->
-                <div class="suggestions">
-                    <h3>Recettes similaires</h3>
-                    <div class="suggestions-grid">
-                        <article class="recipes-card">
-                            <div class="recipe-image-container">
-                                <img src="assets/images/ratatouille_provencale.jpg" alt="Ratatouille provençale">
-                                <button class="favorite-toggle" aria-label="Ajouter aux favoris">♡</button>
-                            </div>
-                            <div class="recipe-details">
-                                <h2>Ratatouille provençale</h2>
-                                <div class="recipe-tags">
-                                    <span class="tag category">Plat</span>
-                                    <span class="tag time">45 min</span>
-                                    <span class="tag difficulty">Moyen</span>
-                                </div>
-                                <a href="recette.html" class="btn-voir-recette">Voir la recette</a>
-                            </div>
-                        </article>
-                        <article class="recipes-card">
-                            <div class="recipe-image-container">
-                                <img src="assets/images/veloute_de_potiron.jpg" alt="Velouté de potiron">
-                                <button class="favorite-toggle" aria-label="Ajouter aux favoris">♡</button>
-                            </div>
-                            <div class="recipe-details">
-                                <h2>Velouté de potiron</h2>
-                                <div class="recipe-tags">
-                                    <span class="tag category">Entrée</span>
-                                    <span class="tag time">30 min</span>
-                                    <span class="tag difficulty">Facile</span>
-                                </div>
-                                <a href="recette.html" class="btn-voir-recette">Voir la recette</a>
-                            </div>
-                        </article>
-                    </div>
+            <div id="recipe-content-1" class="recipe-content" hidden>
+                <!-- Liste des ingrédients -->
+                <div class="ingredients">
+                    <h3>Ingrédients</h3>
+                    <ul>
+                        <li>5 pommes (environ 600g)</li>
+                        <li>1 pâte brisée (250g)</li>
+                        <li>50g de sucre</li>
+                        <li>20g de beurre</li>
+                        <li>1 cuillère à soupe de cannelle (optionnel)</li>
+                    </ul>
                 </div>
+                <!-- Étapes de préparation -->
+                <div class="preparation-steps">
+                    <h3>Étapes de préparation</h3>
+                    <ol>
+                        <li>Préchauffer le four à 180°C.</li>
+                        <li>Éplucher et couper les pommes en tranches fines.</li>
+                        <li>Étaler la pâte brisée dans un moule à tarte.</li>
+                        <li>Disposer les tranches de pommes en rosace sur la pâte.</li>
+                        <li>Saupoudrer de sucre et de cannelle, puis ajouter des noisettes de beurre.</li>
+                        <li>Cuire au four pendant 45 minutes, jusqu'à ce que la pâte soit dorée.</li>
+                    </ol>
+                </div>
+            </div>
         </section>
+
+        <!-- Détails de la recette : Ratatouille -->
+        <section class="recipe-details" aria-label="Détails de la recette">
+            <div class="recipe-image-container">
+                <img src="assets/images/ratatouille provencale.jpg" alt="Ratatouille">
+            </div>
+            <div class="recipe-info">
+                <h2>Ratatouille</h2>
+                <div class="recipe-tags">
+                    <span class="tag category">Plat</span>
+                    <span class="tag time">45 min</span>
+                    <span class="tag difficulty">Moyen</span>
+                    <span class="tag servings">4 personnes</span>
+                </div>
+                <button class="favorite-toggle" aria-label="Ajouter aux favoris">♡</button>
+                <button class="btn-voir-recette">Voir la recette</button>
+            </div>
+            <div id="recipe-content-2" class="recipe-content" hidden>
+                <!-- Liste des ingrédients -->
+                <div class="ingredients">
+                    <h3>Ingrédients</h3>
+                    <ul>
+                        <li>2 courgettes</li>
+                        <li>1 aubergine</li>
+                        <li>3 tomates</li>
+                        <li>1 poivron rouge</li>
+                        <li>1 oignon</li>
+                        <li>2 gousses d’ail</li>
+                        <li>3 cuillères à soupe d’huile d’olive</li>
+                        <li>Sel, poivre, herbes de Provence</li>
+                    </ul>
+                </div>
+                <!-- Étapes de préparation -->
+                <div class="preparation-steps">
+                    <h3>Étapes de préparation</h3>
+                    <ol>
+                        <li>Couper tous les légumes en petits dés.</li>
+                        <li>Faire chauffer l’huile d’olive dans une grande poêle.</li>
+                        <li>Faire revenir l’oignon et l’ail jusqu’à ce qu’ils soient translucides.</li>
+                        <li>Ajouter les légumes, saler, poivrer, et ajouter des herbes de Provence.</li>
+                        <li>Laisser mijoter à feu doux pendant 30 minutes, en remuant de temps en temps.</li>
+                        <li>Servir chaud ou froid selon votre préférence.</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <!-- Détails de la recette : Velouté de potiron -->
+        <section class="recipe-details" aria-label="Détails de la recette">
+            <div class="recipe-image-container">
+                <img src="assets/images/veloute de potiron.jpg" alt="Velouté de potiron">
+            </div>
+            <div class="recipe-info">
+                <h2>Velouté de potiron</h2>
+                <div class="recipe-tags">
+                    <span class="tag category">Entrée</span>
+                    <span class="tag time">30 min</span>
+                    <span class="tag difficulty">Facile</span>
+                    <span class="tag servings">4 personnes</span>
+                </div>
+                <button class="favorite-toggle" aria-label="Ajouter aux favoris">♡</button>
+                <button class="btn-voir-recette">Voir la recette</button>
+            </div>
+            <div id="recipe-content-3" class="recipe-content" hidden>
+                <!-- Liste des ingrédients -->
+                <div class="ingredients">
+                    <h3>Ingrédients</h3>
+                    <ul>
+                        <li>500g de potiron</li>
+                        <li>1 oignon</li>
+                        <li>2 pommes de terre</li>
+                        <li>1 litre de bouillon de légumes</li>
+                        <li>20cl de crème fraîche</li>
+                        <li>Sel, poivre</li>
+                    </ul>
+                </div>
+                <!-- Étapes de préparation -->
+                <div class="preparation-steps">
+                    <h3>Étapes de préparation</h3>
+                    <ol>
+                        <li>Éplucher et couper le potiron, les pommes de terre, et l’oignon en morceaux.</li>
+                        <li>Faire revenir l’oignon dans une casserole avec un peu d’huile.</li>
+                        <li>Ajouter le potiron, les pommes de terre, et le bouillon de légumes.</li>
+                        <li>Laisser cuire 20 minutes à feu moyen.</li>
+                        <li>Mixer jusqu’à obtenir une texture lisse.</li>
+                        <li>Ajouter la crème fraîche, saler, poivrer, et servir chaud.</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <!-- Suggestions de recettes similaires -->
+        <div class="suggestions">
+            <h3>Recettes similaires</h3>
+            <div class="suggestions-grid">
+                <article class="recipes-card">
+                    <div class="recipe-image-container">
+                        <img src="assets/images/quiche lorraine.jpg" alt="Quiche Lorraine">
+                        <button class="favorite-toggle" aria-label="Ajouter aux favoris">♡</button>
+                    </div>
+                    <div class="recipe-details">
+                        <h2>Quiche Lorraine</h2>
+                        <div class="recipe-tags">
+                            <span class="tag category">Plat</span>
+                            <span class="tag time">50 min</span>
+                            <span class="tag difficulty">Moyen</span>
+                        </div>
+                        <a href="recette.html" class="btn-voir-recette">Voir la recette</a>
+                    </div>
+                </article>
+                <article class="recipes-card">
+                    <div class="recipe-image-container">
+                        <img src="assets/images/creme brulee.jpg" alt="Crème brûlée">
+                        <button class="favorite-toggle" aria-label="Ajouter aux favoris">♡</button>
+                    </div>
+                    <div class="recipe-details">
+                        <h2>Crème brûlée</h2>
+                        <div class="recipe-tags">
+                            <span class="tag category">Dessert</span>
+                            <span class="tag time">40 min</span>
+                            <span class="tag difficulty">Moyen</span>
+                        </div>
+                        <a href="recette.html" class="btn-voir-recette">Voir la recette</a>
+                    </div>
+                </article>
+            </div>
+        </div>
     </main>
     <footer>
-        <!--La navigation du footer-->
-        <nav class="footer-nav">
+        <div class="footer-nav">
+            <h3>Navigation</h3>
             <ul>
                 <li><a href="index.html">Accueil</a></li>
+                <li><a href="ajouter-recette.html">Ajouter une recette</a></li>
                 <li><a href="favoris.html">Mes favoris</a></li>
                 <li><a href="a-propos.html">À propos</a></li>
             </ul>
-        </nav>
+        </div>
         <div class="footer-about">
-            <p>Gourmetch - Plateforme de recettes culinaires</p>
-            <p>&copy; 2025 Tous droits reservés</p>
+            <h3>À propos de GourmeTech</h3>
+            <p>GourmeTech est une plateforme de recettes culinaires interactive développée dans le cadre d’un projet
+                pédagogique.</p>
+            <p>© 2025 GourmeTech - Tous droits réservés</p>
         </div>
     </footer>
 </body>
