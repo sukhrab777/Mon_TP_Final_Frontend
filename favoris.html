@@ -1,29 +1,26 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GourmeTech-Favoris</title>
+    <title>GourmeTech - Favoris</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/styles.css">
     <script src="js/scripts.js" defer></script>
     <script src="js/autres_fichiers.js" defer></script>
 </head>
-
 <body>
-    <!-- Header-->
     <header>
         <div class="header-container">
             <div class="logo-container">
                 <div class="logo">G</div>
-                <h1><a href="index.html" aria-label="Retour à la page d'accueil"></a>Gourmetch</h1>
+                <h1><a href="index.html" aria-label="Retour à la page d'accueil">Gourmetch</a></h1>
             </div>
             <div class="header-action">
-                <button id="menu-toggle" aria-label="Changer de thème">
+                <button id="theme-toggle" aria-label="Changer de thème">
                     <span class="moon-icon">🌙</span>
                 </button>
-                <button id="menu-toggle" aria-label="Menu de navigation">
+                <button id="nav-toggle" aria-label="Menu de navigation">
                     <span class="menu-icon">☰</span>
                 </button>
             </div>
@@ -31,20 +28,19 @@
         <nav id="main-nav" class="hidden">
             <ul>
                 <li><a href="index.html">Accueil</a></li>
-                <li><a href="favoris.html">Mes favoris</a></li>
+                <li><a href="favoris.html" class="active">Mes favoris</a></li>
                 <li><a href="a-propos.html">A propos</a></li>
             </ul>
         </nav>
     </header>
     <main>
-        <!--Barre de recherche-->
         <section class="search-section">
             <div class="search-container">
                 <input type="text" id="recipe-search" placeholder="Rechercher une recette...">
                 <button id="search-button">Rechercher</button>
             </div>
-            <!--Filtres-->
-            <div class="filters-section" aria-label="Filtres de recettes">
+            <div class="filters-section">
+                <h2 class="sr-only">Filtres de recettes</h2>
                 <div class="filter-group">
                     <h3>Catégorie</h3>
                     <div class="filter-options">
@@ -63,47 +59,37 @@
                     <h3>Niveau de difficulté</h3>
                     <div class="filter-options">
                         <label>
-                            <input type="checkbox" name="difficulty" value="facile">
-                            Facile
+                            <input type="checkbox" name="difficulty" value="facile">Facile
                         </label>
                         <label>
-                            <input type="checkbox" name="difficulty" value="moyen">
-                            Moyen
+                            <input type="checkbox" name="difficulty" value="moyen">Moyen
                         </label>
                         <label>
-                            <input type="checkbox" name="difficulty" value="difficile">
-                            Difficile
+                            <input type="checkbox" name="difficulty" value="difficile">Difficile
                         </label>
                     </div>
                 </div>
             </div>
         </section>
-        <!-- Section des favoris -->
         <section class="favorites-section" aria-label="Mes recettes favorites">
             <h2>Mes favoris</h2>
-            <!-- Message si aucun favori -->
             <p id="no-favorites-message">Aucune recette favorite pour le moment.</p>
         </section>
     </main>
-
-    <!-- Footer (identique à index.html) -->
     <footer>
         <div class="footer-nav">
             <h3>Navigation</h3>
             <ul>
                 <li><a href="index.html">Accueil</a></li>
-                <li><a href="ajouter-recette.html">Ajouter une recette</a></li>
                 <li><a href="favoris.html">Mes favoris</a></li>
                 <li><a href="a-propos.html">À propos</a></li>
             </ul>
         </div>
         <div class="footer-about">
             <h3>À propos de GourmeTech</h3>
-            <p>GourmeTech est une plateforme de recettes culinaires interactive développée dans le cadre d’un projet
-                pédagogique.</p>
+            <p>GourmeTech est une plateforme de recettes culinaires interactive développée dans le cadre d’un projet pédagogique.</p>
             <p>© 2025 GourmeTech - Tous droits réservés</p>
         </div>
     </footer>
 </body>
-
 </html>

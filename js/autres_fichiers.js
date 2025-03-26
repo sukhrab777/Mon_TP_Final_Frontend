@@ -44,7 +44,7 @@ filterCheckboxes.forEach(checkbox => {
 });
 
 // === Changement de thème ===
-const themeToggle = document.querySelector('#menu-toggle[aria-label="Changer de thème"]');
+const themeToggle = document.querySelector('#theme-toggle[aria-label="Changer de thème"]');
 let isDarkTheme = false;
 
 themeToggle.addEventListener('click', () => {

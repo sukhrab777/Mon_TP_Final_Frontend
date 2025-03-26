@@ -1,33 +1,29 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GourmeTech - A propos</title>
+    <title>GourmeTech - À propos</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/styles.css">
     <script src="js/scripts.js" defer></script>
     <script src="js/autres_fichiers.js" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
-
 <body>
-    <!-- Header-->
     <header>
         <div class="header-container">
             <div class="logo-container">
                 <div class="logo">G</div>
-                <h1><a href="index.html" aria-label="Retour à la page d'accueil"></a>Gourmetch</h1>
+                <h1><a href="index.html" aria-label="Retour à la page d'accueil">Gourmetch</a></h1>
             </div>
             <div class="header-action">
-                <button id="menu-toggle" aria-label="Changer de thème">
+                <button id="theme-toggle" aria-label="Changer de thème">
                     <span class="moon-icon">🌙</span>
                 </button>
-                <button id="menu-toggle" aria-label="Menu de navigation">
+                <button id="nav-toggle" aria-label="Menu de navigation">
                     <span class="menu-icon">☰</span>
                 </button>
             </div>
@@ -36,19 +32,18 @@
             <ul>
                 <li><a href="index.html">Accueil</a></li>
                 <li><a href="favoris.html">Mes favoris</a></li>
-                <li><a href="a-propos.html">A propos</a></li>
+                <li><a href="a-propos.html" class="active">A propos</a></li>
             </ul>
         </nav>
     </header>
     <main>
-        <!--Barre de recherche-->
         <section class="search-section">
             <div class="search-container">
                 <input type="text" id="recipe-search" placeholder="Rechercher une recette...">
                 <button id="search-button">Rechercher</button>
             </div>
-            <!--Filtres-->
-            <div class="filters-section" aria-label="Filtres de recettes">
+            <div class="filters-section">
+                <h2 class="sr-only">Filtres de recettes</h2>
                 <div class="filter-group">
                     <h3>Catégorie</h3>
                     <div class="filter-options">
@@ -67,87 +62,62 @@
                     <h3>Niveau de difficulté</h3>
                     <div class="filter-options">
                         <label>
-                            <input type="checkbox" name="difficulty" value="facile">
-                            Facile
+                            <input type="checkbox" name="difficulty" value="facile">Facile
                         </label>
                         <label>
-                            <input type="checkbox" name="difficulty" value="moyen">
-                            Moyen
+                            <input type="checkbox" name="difficulty" value="moyen">Moyen
                         </label>
                         <label>
-                            <input type="checkbox" name="difficulty" value="difficile">
-                            Difficile
+                            <input type="checkbox" name="difficulty" value="difficile">Difficile
                         </label>
                     </div>
                 </div>
             </div>
         </section>
-        <!-- Section À propos -->
         <section class="about-section" aria-label="À propos de Gourmetch">
             <h2>À propos de Gourmetch</h2>
-            <p>Gourmetch est une plateforme de recettes culinaires interactives développée dans le cadre d’un projet
-                pédagogique. Notre mission est de permettre aux passionnés de cuisine de découvrir, partager et
-                sauvegarder leurs recettes préférées, tout en offrant une expérience utilisateur intuitive et moderne.
-            </p>
+            <p>Gourmetch est une plateforme de recettes culinaires interactives développée dans le cadre d’un projet pédagogique. Notre mission est de permettre aux passionnés de cuisine de découvrir, partager et sauvegarder leurs recettes préférées, tout en offrant une expérience utilisateur intuitive et moderne.</p>
         </section>
-
-        <!-- Section FAQ -->
         <section class="faq-section" aria-label="Foire aux questions">
             <h2>FAQ</h2>
             <div class="faq-item">
-                <button class="faq-question" aria-expanded="false" aria-controls="faq1">Comment ajouter une recette
-                    ?</button>
+                <button class="faq-question" aria-expanded="false" aria-controls="faq1">Comment ajouter une recette ?</button>
                 <div id="faq1" class="faq-answer" hidden>
-                    <p>Pour ajouter une recette, rendez-vous sur la page "Ajouter une recette" et remplissez le
-                        formulaire avec les détails de votre recette (titre, ingrédients, étapes, etc.). Une fois
-                        soumis, votre recette sera ajoutée à la liste des recettes disponibles.</p>
+                    <p>Pour ajouter une recette, rendez-vous sur la page "Ajouter une recette" et remplissez le formulaire avec les détails de votre recette (titre, ingrédients, étapes, etc.). Une fois soumis, votre recette sera ajoutée à la liste des recettes disponibles.</p>
                 </div>
             </div>
             <div class="faq-item">
-                <button class="faq-question" aria-expanded="false" aria-controls="faq2">Comment gérer mes favoris
-                    ?</button>
+                <button class="faq-question" aria-expanded="false" aria-controls="faq2">Comment gérer mes favoris ?</button>
                 <div id="faq2" class="faq-answer" hidden>
-                    <p>Vous pouvez ajouter une recette à vos favoris en cliquant sur l’icône en forme de cœur sur la
-                        page d’accueil ou sur la page de la recette. Pour voir ou supprimer vos favoris, allez sur la
-                        page "Mes favoris".</p>
+                    <p>Vous pouvez ajouter une recette à vos favoris en cliquant sur l’icône en forme de cœur sur la page d’accueil ou sur la page de la recette. Pour voir ou supprimer vos favoris, allez sur la page "Mes favoris".</p>
                 </div>
             </div>
             <div class="faq-item">
-                <button class="faq-question" aria-expanded="false" aria-controls="faq3">Le site est-il accessible sur
-                    mobile ?</button>
+                <button class="faq-question" aria-expanded="false" aria-controls="faq3">Le site est-il accessible sur mobile ?</button>
                 <div id="faq3" class="faq-answer" hidden>
-                    <p>Oui, Gourmetch est conçu pour être responsive et fonctionne sur tous les appareils, y compris les
-                        smartphones et les tablettes. Vous pouvez accéder à toutes les fonctionnalités depuis votre
-                        mobile.</p>
+                    <p>Oui, Gourmetch est conçu pour être responsive et fonctionne sur tous les appareils, y compris les smartphones et les tablettes. Vous pouvez accéder à toutes les fonctionnalités depuis votre mobile.</p>
                 </div>
             </div>
         </section>
-
-        <!-- Section Formulaire de contact -->
         <section class="contact-section" aria-label="Formulaire de contact">
             <h2>Contactez-nous</h2>
             <form id="contact-form" aria-label="Formulaire de contact">
                 <div class="form-group">
                     <label for="contact-name">Nom</label>
-                    <input type="text" id="contact-name" name="name" required aria-required="true"
-                        placeholder="Votre nom">
+                    <input type="text" id="contact-name" name="name" required aria-required="true" placeholder="Votre nom">
                 </div>
                 <div class="form-group">
                     <label for="contact-email">Email</label>
-                    <input type="email" id="contact-email" name="email" required aria-required="true"
-                        placeholder="Votre email">
+                    <input type="email" id="contact-email" name="email" required aria-required="true" placeholder="Votre email">
                 </div>
                 <div class="form-group">
                     <label for="contact-message">Message</label>
-                    <textarea id="contact-message" name="message" rows="5" required aria-required="true"
-                        placeholder="Votre message"></textarea>
+                    <textarea id="contact-message" name="message" rows="5" required aria-required="true" placeholder="Votre message"></textarea>
                 </div>
                 <button type="submit">Envoyer</button>
             </form>
         </section>
     </main>
-
-    <!-- Footer (identique à index.html) -->
     <footer>
         <div class="footer-nav">
             <h3>Navigation</h3>
@@ -158,8 +128,10 @@
             </ul>
         </div>
         <div class="footer-about">
-            <p>Gourmetch - Plateforme de recettes culinaires</p>
-            <p>© 2025 Tous droits reservés</p>
+            <h3>À propos de GourmeTech</h3>
+            <p>GourmeTech est une plateforme de recettes culinaires interactive développée dans le cadre d’un projet pédagogique.</p>
+            <p>© 2025 GourmeTech - Tous droits réservés</p>
         </div>
     </footer>
 </body>
+</html>

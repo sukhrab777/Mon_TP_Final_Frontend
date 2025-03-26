@@ -1,16 +1,16 @@
 /* === Variables CSS === */
 :root {
     /* Couleurs */
-    --orange: #f5a623; /* Pour les boutons et badges "Catégorie" */
-    --green: #28a745; /* Pour les badges "Temps" */
-    --blue: #17a2b8; /* Pour les badges "Difficulté" */
-    --text-color: #333; /* Texte principal */
-    --background-color: #f9f9f9; /* Fond général */
-    --white: #fff; /* Fond des cartes et sections */
-    --shadow: rgba(0, 0, 0, 0.1); /* Ombre légère */
+    --orange: #f5a623;
+    --green: #28a745;
+    --blue: #17a2b8;
+    --text-color: #333;
+    --background-color: #f9f9f9;
+    --white: #fff;
+    --shadow: rgba(0, 0, 0, 0.1);
 
     /* Polices */
-    --font-family: 'Roboto', sans-serif; /* Utiliser Roboto */
+    --font-family: 'Roboto', sans-serif;
     --font-size: 16px;
 }
 
@@ -57,12 +57,18 @@ header {
     color: var(--text-color);
 }
 
+.logo-container a {
+    color: inherit;
+    text-decoration: none;
+}
+
 .header-action {
     display: flex;
     gap: 10px;
 }
 
-#menu-toggle {
+#theme-toggle,
+#nav-toggle {
     background: none;
     border: none;
     font-size: 20px;
@@ -70,7 +76,7 @@ header {
 }
 
 nav {
-    display: block; /* Visible par défaut sur desktop */
+    display: block;
 }
 
 nav ul {
@@ -81,6 +87,7 @@ nav ul {
 nav a {
     color: var(--text-color);
     font-size: 16px;
+    text-decoration: none;
 }
 
 nav a:hover {
@@ -88,7 +95,7 @@ nav a:hover {
 }
 
 nav a.active {
-    color: var(--orange); /* Style pour le lien actif */
+    color: var(--orange);
     font-weight: bold;
 }
 
@@ -132,6 +139,17 @@ nav a.active {
     margin: 15px;
     border-radius: 8px;
     box-shadow: 0 2px 5px var(--shadow);
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
 }
 
 .filter-group {
@@ -231,6 +249,10 @@ nav a.active {
     background-color: var(--blue);
 }
 
+.tag.servings {
+    background-color: #6c757d;
+}
+
 .btn-voir-recette {
     display: inline-block;
     padding: 10px 20px;
@@ -238,6 +260,9 @@ nav a.active {
     color: var(--white);
     border-radius: 5px;
     font-size: 16px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
 }
 
 /* === Styles pour toutes les images === */
@@ -275,6 +300,7 @@ footer {
 .footer-nav a {
     color: var(--text-color);
     font-size: 16px;
+    text-decoration: none;
 }
 
 .footer-nav a:hover {
@@ -570,7 +596,6 @@ footer {
 
 /* Tablette (769px - 1024px) */
 @media (max-width: 1024px) {
-    /* Grille de recettes */
     .recipes-grid,
     .suggestions-grid {
         padding: 10px;
@@ -581,7 +606,6 @@ footer {
         margin: 0 auto;
     }
 
-    /* Formulaire de contact */
     .contact-section {
         padding: 10px;
     }
@@ -591,7 +615,6 @@ footer {
         font-size: 14px;
     }
 
-    /* Suggestions */
     .suggestions {
         padding: 10px;
     }
@@ -603,7 +626,6 @@ footer {
 
 /* Mobile (768px et moins) */
 @media (max-width: 768px) {
-    /* Header */
     nav {
         display: none;
     }
@@ -640,7 +662,7 @@ footer {
         border-bottom: none;
     }
 
-    #menu-toggle[aria-label="Menu de navigation"] {
+    #nav-toggle[aria-label="Menu de navigation"] {
         display: block;
     }
 
@@ -649,11 +671,10 @@ footer {
         color: var(--text-color);
     }
 
-    #menu-toggle[aria-label="Changer de thème"] {
+    #theme-toggle[aria-label="Changer de thème"] {
         display: none;
     }
 
-    /* Barre de recherche */
     .search-section {
         padding: 10px;
         margin: 10px;
@@ -668,7 +689,6 @@ footer {
         font-size: 14px;
     }
 
-    /* Filtres */
     .filters-section {
         padding: 10px;
         margin: 10px;
@@ -682,7 +702,6 @@ footer {
         font-size: 14px;
     }
 
-    /* Grille de recettes */
     .recipes-grid,
     .suggestions-grid {
         padding: 5px;
@@ -714,7 +733,6 @@ footer {
         padding: 8px 15px;
     }
 
-    /* Détails de la recette (recette.html) */
     .recipe-details {
         padding: 10px;
         margin: 10px;
@@ -734,7 +752,6 @@ footer {
         font-size: 14px;
     }
 
-    /* Section À propos (a-propos.html) */
     .about-section {
         padding: 10px;
         margin: 10px;
@@ -748,7 +765,6 @@ footer {
         font-size: 14px;
     }
 
-    /* Section FAQ (a-propos.html) */
     .faq-section {
         padding: 10px;
         margin: 10px;
@@ -767,7 +783,6 @@ footer {
         font-size: 14px;
     }
 
-    /* Formulaire de contact (a-propos.html) */
     .contact-section {
         padding: 10px;
         margin: 10px;
@@ -792,7 +807,6 @@ footer {
         padding: 8px 15px;
     }
 
-    /* Section Favoris (favoris.html) */
     .favorites-section {
         padding: 10px;
         margin: 10px;
@@ -806,7 +820,6 @@ footer {
         font-size: 14px;
     }
 
-    /* Suggestions (recette.html) */
     .suggestions {
         padding: 10px;
     }
@@ -815,7 +828,6 @@ footer {
         font-size: 18px;
     }
 
-    /* Footer */
     footer {
         flex-direction: column;
         text-align: center;
