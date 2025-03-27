@@ -1,5 +1,3 @@
-// autres_fichiers.js
-
 // === Recherche ===
 const searchInput = document.querySelector('#recipe-search');
 const searchButton = document.querySelector('#search-button');

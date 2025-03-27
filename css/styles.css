@@ -49,12 +49,13 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-weight: bold;
+    font-weight: 900;
 }
 
 .logo-container h1 {
     font-size: 20px;
-    color: var(--text-color);
+    color: var(--orange);
+    font-weight: 900;
 }
 
 .logo-container a {
@@ -192,6 +193,9 @@ nav a.active {
 
 .recipe-image-container {
     position: relative;
+    width: 100%;
+    height: 200px;
+    z-index: 1100;
 }
 
 .recipe-image-container img {
@@ -204,12 +208,29 @@ nav a.active {
     position: absolute;
     top: 10px;
     right: 10px;
-    background: none;
+    background-color: #ccc;
+    /* Cercle gris par défaut */
+    border-radius: 50%;
+    width: 34px;
+    /* Taille légèrement plus grande pour desktop */
+    height: 34px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    /* Taille du cœur pour desktop */
+    color: #333;
+    /* Couleur du cœur par défaut */
     border: none;
-    font-size: 20px;
     cursor: pointer;
+    text-shadow: none;
+}
+
+.favorite-toggle[aria-pressed="true"] {
+    background-color: #ff0000;
+    /* Cercle rouge après clic */
     color: #fff;
-    text-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+    /* Cœur blanc sur fond rouge */
 }
 
 .recipe-details {
@@ -593,9 +614,67 @@ footer {
 }
 
 /* === Responsive Design === */
+/* Mobile (768px et moins) */
+@media (max-width: 768px) {
+    nav {
+        display: none;
+    }
+
+    nav[hidden] {
+        display: none;
+    }
+
+    .logo-container h1 {
+        font-size: 18px;
+    }
+
+    .logo {
+        width: 26px;
+        height: 26px;
+        font-size: 14px;
+    }
+
+    @media (max-width: 768px) {
+        @media (max-width: 768px) {
+            .favorite-toggle {
+                width: 30px;
+                /* Taille du cercle pour mobile */
+                height: 30px;
+                font-size: 16px;
+                /* Taille du cœur pour mobile */
+                top: 8px;
+                right: 8px;
+            }
+        }
+    }
+
+    footer {
+        flex-direction: column;
+        text-align: center;
+        padding: 10px;
+    }
+
+    .footer-nav {
+        text-align: center;
+        margin-bottom: 15px;
+    }
+
+    .footer-nav h3 {
+        font-size: 16px;
+    }
+
+    .footer-nav a {
+        font-size: 14px;
+    }
+
+    .footer-about {
+        text-align: center;
+    }
+}
 
 /* Tablette (769px - 1024px) */
-@media (max-width: 1024px) {
+@media (min-width: 769px) and (max-width: 1024px) {
+
     .recipes-grid,
     .suggestions-grid {
         padding: 10px;
@@ -624,222 +703,219 @@ footer {
     }
 }
 
-/* Mobile (768px et moins) */
-@media (max-width: 768px) {
-    nav {
-        display: none;
-    }
+nav:not([hidden]) {
+    display: block;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: var(--white);
+    box-shadow: 0 2px 5px var(--shadow);
+    z-index: 1000;
+}
 
-    nav[hidden] {
-        display: none;
-    }
+nav ul {
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+}
 
-    nav:not([hidden]) {
-        display: block;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        width: 100%;
-        background-color: var(--white);
-        box-shadow: 0 2px 5px var(--shadow);
-        z-index: 1000;
-    }
+nav a {
+    display: block;
+    padding: 10px;
+    font-size: 18px;
+    border-bottom: 1px solid #ddd;
+}
 
-    nav ul {
-        flex-direction: column;
-        gap: 10px;
-        padding: 10px;
-    }
+nav a:last-child {
+    border-bottom: none;
+}
 
-    nav a {
-        display: block;
-        padding: 10px;
-        font-size: 18px;
-        border-bottom: 1px solid #ddd;
-    }
+#nav-toggle[aria-label="Menu de navigation"] {
+    display: block;
+}
 
-    nav a:last-child {
-        border-bottom: none;
-    }
+.menu-icon {
+    font-size: 24px;
+    color: var(--text-color);
+}
 
-    #nav-toggle[aria-label="Menu de navigation"] {
-        display: block;
-    }
+#theme-toggle[aria-label="Changer de thème"] {
+    display: none;
+}
 
-    .menu-icon {
-        font-size: 24px;
-        color: var(--text-color);
-    }
+.search-section {
+    padding: 10px;
+    margin: 10px;
+}
 
-    #theme-toggle[aria-label="Changer de thème"] {
-        display: none;
-    }
+.search-container input {
+    font-size: 14px;
+}
 
-    .search-section {
-        padding: 10px;
-        margin: 10px;
-    }
+.search-container button {
+    padding: 8px 10px;
+    font-size: 14px;
+}
 
-    .search-container input {
-        font-size: 14px;
-    }
+.filters-section {
+    padding: 10px;
+    margin: 10px;
+}
 
-    .search-container button {
-        padding: 8px 10px;
-        font-size: 14px;
-    }
+.filter-group h3 {
+    font-size: 16px;
+}
 
-    .filters-section {
-        padding: 10px;
-        margin: 10px;
-    }
+.filter-options label {
+    font-size: 14px;
+}
 
-    .filter-group h3 {
-        font-size: 16px;
-    }
+.favorite-toggle {
+    width: 32px;
+    height: 32px;
+    font-size: 17px;
+    top: 9px;
+    right: 9px;
+}
 
-    .filter-options label {
-        font-size: 14px;
-    }
+.recipes-grid,
+.suggestions-grid {
+    padding: 5px;
+}
 
-    .recipes-grid,
-    .suggestions-grid {
-        padding: 5px;
-    }
+.recipes-card {
+    max-width: 100%;
+}
 
-    .recipes-card {
-        max-width: 100%;
-    }
+.recipe-image-container img {
+    height: 120px;
+}
 
-    .recipe-image-container img {
-        height: 120px;
-    }
+.recipe-details h2 {
+    font-size: 16px;
+}
 
-    .recipe-details h2 {
-        font-size: 16px;
-    }
+.recipe-tags {
+    gap: 5px;
+}
 
-    .recipe-tags {
-        gap: 5px;
-    }
+.tag {
+    font-size: 12px;
+    padding: 4px 8px;
+}
 
-    .tag {
-        font-size: 12px;
-        padding: 4px 8px;
-    }
+.btn-voir-recette {
+    font-size: 14px;
+    padding: 8px 15px;
+}
 
-    .btn-voir-recette {
-        font-size: 14px;
-        padding: 8px 15px;
-    }
+.recipe-details {
+    padding: 10px;
+    margin: 10px;
+}
 
-    .recipe-details {
-        padding: 10px;
-        margin: 10px;
-    }
+.recipe-info h2 {
+    font-size: 18px;
+}
 
-    .recipe-info h2 {
-        font-size: 18px;
-    }
+.ingredients h3,
+.preparation-steps h3 {
+    font-size: 16px;
+}
 
-    .ingredients h3,
-    .preparation-steps h3 {
-        font-size: 16px;
-    }
+.ingredients li,
+.preparation-steps li {
+    font-size: 14px;
+}
 
-    .ingredients li,
-    .preparation-steps li {
-        font-size: 14px;
-    }
+.about-section {
+    padding: 10px;
+    margin: 10px;
+}
 
-    .about-section {
-        padding: 10px;
-        margin: 10px;
-    }
+.about-section h2 {
+    font-size: 20px;
+}
 
-    .about-section h2 {
-        font-size: 20px;
-    }
+.about-section p {
+    font-size: 14px;
+}
 
-    .about-section p {
-        font-size: 14px;
-    }
+.faq-section {
+    padding: 10px;
+    margin: 10px;
+}
 
-    .faq-section {
-        padding: 10px;
-        margin: 10px;
-    }
+.faq-section h2 {
+    font-size: 20px;
+}
 
-    .faq-section h2 {
-        font-size: 20px;
-    }
+.faq-question {
+    font-size: 16px;
+    padding: 8px;
+}
 
-    .faq-question {
-        font-size: 16px;
-        padding: 8px;
-    }
+.faq-answer p {
+    font-size: 14px;
+}
 
-    .faq-answer p {
-        font-size: 14px;
-    }
+.contact-section {
+    padding: 10px;
+    margin: 10px;
+}
 
-    .contact-section {
-        padding: 10px;
-        margin: 10px;
-    }
+.contact-section h2 {
+    font-size: 20px;
+}
 
-    .contact-section h2 {
-        font-size: 20px;
-    }
+.form-group label {
+    font-size: 14px;
+}
 
-    .form-group label {
-        font-size: 14px;
-    }
+.form-group input,
+.form-group textarea {
+    font-size: 14px;
+    padding: 6px;
+}
 
-    .form-group input,
-    .form-group textarea {
-        font-size: 14px;
-        padding: 6px;
-    }
+#contact-form button {
+    font-size: 14px;
+    padding: 8px 15px;
+}
 
-    #contact-form button {
-        font-size: 14px;
-        padding: 8px 15px;
-    }
+.favorites-section {
+    padding: 10px;
+    margin: 10px;
+}
 
-    .favorites-section {
-        padding: 10px;
-        margin: 10px;
-    }
+.favorites-section h2 {
+    font-size: 20px;
+}
 
-    .favorites-section h2 {
-        font-size: 20px;
-    }
+#no-favorites-message {
+    font-size: 14px;
+}
 
-    #no-favorites-message {
-        font-size: 14px;
-    }
+.suggestions {
+    padding: 10px;
+}
 
-    .suggestions {
-        padding: 10px;
-    }
+.suggestions h3 {
+    font-size: 18px;
+}
 
-    .suggestions h3 {
-        font-size: 18px;
-    }
+footer {
+    flex-direction: column;
+    text-align: center;
+    padding: 10px;
+}
 
-    footer {
-        flex-direction: column;
-        text-align: center;
-        padding: 10px;
-    }
+.footer-nav {
+    text-align: center;
+    margin-bottom: 15px;
+}
 
-    .footer-nav {
-        text-align: center;
-        margin-bottom: 15px;
-    }
-
-    .footer-about {
-        text-align: center;
-    }
+.footer-about {
+    text-align: center;
 }

@@ -1,4 +1,3 @@
-// scripts.js
 
 // === Menu Hamburger ===
 const navToggle = document.querySelector('#nav-toggle[aria-label="Menu de navigation"]');

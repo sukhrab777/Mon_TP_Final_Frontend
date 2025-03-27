@@ -17,13 +17,13 @@
         <div class="header-container">
             <div class="logo-container">
                 <div class="logo">G</div>
-                <h1><a href="index.html" aria-label="Retour à la page d'accueil">Gourmetch</a></h1>
+                <h1><a href="index.html" aria-label="Retour à la page d'accueil">GourmeTech</a></h1>
             </div>
             <div class="header-action">
                 <button id="theme-toggle" aria-label="Changer de thème">
                     <span class="moon-icon">🌙</span>
                 </button>
-                <button id="nav-toggle" aria-label="Menu de navigation">
+                <button id="nav-toggle" aria-label="Menu de navigation" aria-expanded="false">
                     <span class="menu-icon">☰</span>
                 </button>
             </div>
@@ -54,7 +54,7 @@
                             <input type="checkbox" name="categorie" value="plat">Plat
                         </label>
                         <label>
-                            <input type="checkbox" name="categorie" value="desert">Dessert
+                            <input type="checkbox" name="categorie" value="dessert">Dessert
                         </label>
                     </div>
                 </div>
@@ -77,6 +77,7 @@
         <section class="recipe-details" aria-label="Détails de la recette">
             <div class="recipe-image-container">
                 <img src="assets/images/tarte aux pommes.jpg" alt="Tarte aux pommes dorée avec des tranches de pommes disposées en spirale">
+</div>
             </div>
             <div class="recipe-info">
                 <h2>Tarte aux pommes</h2>
@@ -116,6 +117,7 @@
         <section class="recipe-details" aria-label="Détails de la recette">
             <div class="recipe-image-container">
                 <img src="assets/images/ratatouille provencale.jpg" alt="Ratatouille colorée avec des légumes finement tranchés">
+                <button class="favorite-toggle" aria-label="Ajouter aux favoris" aria-pressed="false">♡</button>
             </div>
             <div class="recipe-info">
                 <h2>Ratatouille</h2>
@@ -125,7 +127,6 @@
                     <span class="tag difficulty">Moyen</span>
                     <span class="tag servings">4 personnes</span>
                 </div>
-                <button class="favorite-toggle" aria-label="Ajouter aux favoris" aria-pressed="false">♡</button>
                 <button class="btn-voir-recette" aria-expanded="false" aria-controls="recipe-content-2">Voir la recette</button>
             </div>
             <div id="recipe-content-2" class="recipe-content" hidden>
@@ -158,6 +159,7 @@
         <section class="recipe-details" aria-label="Détails de la recette">
             <div class="recipe-image-container">
                 <img src="assets/images/veloute de potiron.jpg" alt="Velouté crémeux de potiron servi dans un bol blanc">
+                <button class="favorite-toggle" aria-label="Ajouter aux favoris" aria-pressed="false">♡</button>
             </div>
             <div class="recipe-info">
                 <h2>Velouté de potiron</h2>
@@ -167,7 +169,6 @@
                     <span class="tag difficulty">Facile</span>
                     <span class="tag servings">4 personnes</span>
                 </div>
-                <button class="favorite-toggle" aria-label="Ajouter aux favoris" aria-pressed="false">♡</button>
                 <button class="btn-voir-recette" aria-expanded="false" aria-controls="recipe-content-3">Voir la recette</button>
             </div>
             <div id="recipe-content-3" class="recipe-content" hidden>
