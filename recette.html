@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,10 +9,15 @@
     <link rel="stylesheet" href="css/styles.css">
     <script src="js/scripts.js" defer></script>
     <script src="js/autres_fichiers.js" defer></script>
+    <!-- Charge deux fichiers JavaScript séparés :
+         - scripts.js : gère les favoris, les accordéons (boutons "Voir la recette"), et la navigation mobile.
+         - autres_fichiers.js : gère la recherche, les filtres, et le changement de thème. -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
 </head>
+
 <body>
     <header>
         <div class="header-container">
@@ -19,6 +25,14 @@
                 <div class="logo">G</div>
                 <h1><a href="index.html" aria-label="Retour à la page d'accueil">GourmeTech</a></h1>
             </div>
+            <nav id="main-nav" class="hidden">
+                <!-- La classe "hidden" masque la navigation par défaut sur mobile ; elle est affichée via le bouton hamburger. -->
+                <ul>
+                    <li><a href="index.html" class="active">Accueil</a></li>
+                    <li><a href="favoris.html">Mes favoris</a></li>
+                    <li><a href="a-propos.html">À propos</a></li>
+                </ul>
+            </nav>
             <div class="header-action">
                 <button id="theme-toggle" aria-label="Changer de thème">
                     <span class="moon-icon">🌙</span>
@@ -28,13 +42,6 @@
                 </button>
             </div>
         </div>
-        <nav id="main-nav" class="hidden">
-            <ul>
-                <li><a href="index.html">Accueil</a></li>
-                <li><a href="favoris.html">Mes favoris</a></li>
-                <li><a href="a-propos.html">À propos</a></li>
-            </ul>
-        </nav>
     </header>
     <main>
         <section class="search-section">
@@ -42,33 +49,46 @@
                 <input type="text" id="recipe-search" placeholder="Rechercher une recette...">
                 <button id="search-button">Rechercher</button>
             </div>
-            <div class="filters-section">
+            <div class="filters-section" aria-label="Filtres de recherche de recettes">
                 <h2 class="sr-only">Filtres de recettes</h2>
                 <div class="filter-group">
                     <h3>Catégorie</h3>
                     <div class="filter-options">
                         <label>
-                            <input type="checkbox" name="categorie" value="entree">Entrée
+                            <input type="checkbox" name="categorie" value="entree"> Entrée
                         </label>
                         <label>
-                            <input type="checkbox" name="categorie" value="plat">Plat
+                            <input type="checkbox" name="categorie" value="plat"> Plat
                         </label>
                         <label>
-                            <input type="checkbox" name="categorie" value="dessert">Dessert
+                            <input type="checkbox" name="categorie" value="dessert"> Dessert
                         </label>
+                    </div>
+                </div>
+                <div class="filter-group">
+                    <h3>Temps de préparation</h3>
+                    <div class="filter-options">
+                        <label>
+                            <input type="checkbox" name="prep-time" value="rapide"> Rapide (< 30 min) </label>
+                                <label>
+                                    <input type="checkbox" name="prep-time" value="moyen"> Moyen (30-60 min)
+                                </label>
+                                <label>
+                                    <input type="checkbox" name="prep-time" value="long"> Long (> 60 min)
+                                </label>
                     </div>
                 </div>
                 <div class="filter-group">
                     <h3>Niveau de difficulté</h3>
                     <div class="filter-options">
                         <label>
-                            <input type="checkbox" name="difficulty" value="facile">Facile
+                            <input type="checkbox" name="difficulty" value="facile"> Facile
                         </label>
                         <label>
-                            <input type="checkbox" name="difficulty" value="moyen">Moyen
+                            <input type="checkbox" name="difficulty" value="moyen"> Moyen
                         </label>
                         <label>
-                            <input type="checkbox" name="difficulty" value="difficile">Difficile
+                            <input type="checkbox" name="difficulty" value="difficile"> Difficile
                         </label>
                     </div>
                 </div>
@@ -76,8 +96,9 @@
         </section>
         <section class="recipe-details" aria-label="Détails de la recette">
             <div class="recipe-image-container">
-                <img src="assets/images/tarte aux pommes.jpg" alt="Tarte aux pommes dorée avec des tranches de pommes disposées en spirale">
-</div>
+                <img src="assets/images/tarte aux pommes.jpg"
+                    alt="Tarte aux pommes dorée avec des tranches de pommes disposées en spirale">
+                <button class="favorite-toggle" aria-label="Ajouter aux favoris" aria-pressed="false">♡</button>
             </div>
             <div class="recipe-info">
                 <h2>Tarte aux pommes</h2>
@@ -87,8 +108,8 @@
                     <span class="tag difficulty">Facile</span>
                     <span class="tag servings">4 personnes</span>
                 </div>
-                <button class="favorite-toggle" aria-label="Ajouter aux favoris" aria-pressed="false">♡</button>
-                <button class="btn-voir-recette" aria-expanded="false" aria-controls="recipe-content-1">Voir la recette</button>
+                <button class="btn-voir-recette" aria-expanded="false" aria-controls="recipe-content-1">Voir la
+                    recette</button>
             </div>
             <div id="recipe-content-1" class="recipe-content" hidden>
                 <div class="ingredients">
@@ -116,18 +137,20 @@
         </section>
         <section class="recipe-details" aria-label="Détails de la recette">
             <div class="recipe-image-container">
-                <img src="assets/images/ratatouille provencale.jpg" alt="Ratatouille colorée avec des légumes finement tranchés">
+                <img src="assets/images/ratatouille provencale.jpg"
+                    alt="Ratatouille colorée avec des légumes finement tranchés">
                 <button class="favorite-toggle" aria-label="Ajouter aux favoris" aria-pressed="false">♡</button>
             </div>
             <div class="recipe-info">
-                <h2>Ratatouille</h2>
+                <h2>Ratatouille provençale</h2>
                 <div class="recipe-tags">
                     <span class="tag category">Plat</span>
                     <span class="tag time">45 min</span>
                     <span class="tag difficulty">Moyen</span>
                     <span class="tag servings">4 personnes</span>
                 </div>
-                <button class="btn-voir-recette" aria-expanded="false" aria-controls="recipe-content-2">Voir la recette</button>
+                <button class="btn-voir-recette" aria-expanded="false" aria-controls="recipe-content-2">Voir la
+                    recette</button>
             </div>
             <div id="recipe-content-2" class="recipe-content" hidden>
                 <div class="ingredients">
@@ -158,7 +181,8 @@
         </section>
         <section class="recipe-details" aria-label="Détails de la recette">
             <div class="recipe-image-container">
-                <img src="assets/images/veloute de potiron.jpg" alt="Velouté crémeux de potiron servi dans un bol blanc">
+                <img src="assets/images/veloute de potiron.jpg"
+                    alt="Velouté crémeux de potiron servi dans un bol blanc">
                 <button class="favorite-toggle" aria-label="Ajouter aux favoris" aria-pressed="false">♡</button>
             </div>
             <div class="recipe-info">
@@ -169,7 +193,8 @@
                     <span class="tag difficulty">Facile</span>
                     <span class="tag servings">4 personnes</span>
                 </div>
-                <button class="btn-voir-recette" aria-expanded="false" aria-controls="recipe-content-3">Voir la recette</button>
+                <button class="btn-voir-recette" aria-expanded="false" aria-controls="recipe-content-3">Voir la
+                    recette</button>
             </div>
             <div id="recipe-content-3" class="recipe-content" hidden>
                 <div class="ingredients">
@@ -201,7 +226,8 @@
             <div class="suggestions-grid">
                 <article class="recipes-card">
                     <div class="recipe-image-container">
-                        <img src="assets/images/quiche lorraine.jpg" alt="Quiche Lorraine avec une pâte dorée et une garniture crémeuse">
+                        <img src="assets/images/quiche lorraine.jpg"
+                            alt="Quiche Lorraine avec une pâte dorée et une garniture crémeuse">
                         <button class="favorite-toggle" aria-label="Ajouter aux favoris" aria-pressed="false">♡</button>
                     </div>
                     <div class="recipe-details">
@@ -216,7 +242,8 @@
                 </article>
                 <article class="recipes-card">
                     <div class="recipe-image-container">
-                        <img src="assets/images/creme brulee.jpg" alt="Crème brûlée avec une croûte de sucre caramélisée">
+                        <img src="assets/images/creme brulee.jpg"
+                            alt="Crème brûlée avec une croûte de sucre caramélisée">
                         <button class="favorite-toggle" aria-label="Ajouter aux favoris" aria-pressed="false">♡</button>
                     </div>
                     <div class="recipe-details">
@@ -243,9 +270,11 @@
         </div>
         <div class="footer-about">
             <h3>À propos de GourmeTech</h3>
-            <p>GourmeTech est une plateforme de recettes culinaires interactive développée dans le cadre d’un projet pédagogique.</p>
+            <p>GourmeTech est une plateforme de recettes culinaires interactive développée dans le cadre d’un projet
+                pédagogique.</p>
             <p>© 2025 GourmeTech - Tous droits réservés</p>
         </div>
     </footer>
 </body>
+
 </html>

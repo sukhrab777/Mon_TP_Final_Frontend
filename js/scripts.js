@@ -1,4 +1,3 @@
-
 // === Menu Hamburger ===
 const navToggle = document.querySelector('#nav-toggle[aria-label="Menu de navigation"]');
 const nav = document.querySelector('#main-nav');
@@ -58,8 +57,16 @@ faqButtons.forEach(button => {
 let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
 
 document.querySelectorAll('.favorite-toggle').forEach(button => {
-    const recipeCard = button.closest('.recipes-card');
-    const recipeTitle = recipeCard.querySelector('h2').textContent;
+    // Cherche l'ancêtre le plus proche : soit .recipes-card, soit .recipe-details
+    const recipeContainer = button.closest('.recipes-card') || button.closest('.recipe-details');
+    
+    // Vérifie que recipeContainer existe et contient un h2
+    if (!recipeContainer || !recipeContainer.querySelector('h2')) {
+        console.warn('Aucun conteneur de recette ou titre trouvé pour ce bouton favori.');
+        return; // Ignore ce bouton pour éviter l'erreur
+    }
+
+    const recipeTitle = recipeContainer.querySelector('h2').textContent;
 
     const isFavorite = favorites.some(fav => fav.title === recipeTitle);
     if (isFavorite) {
@@ -74,24 +81,26 @@ document.querySelectorAll('.favorite-toggle').forEach(button => {
 
     button.addEventListener('click', () => {
         const recipeData = {
-            title: recipeTitle,
-            category: recipeCard.querySelector('.tag.category')?.textContent || 'Inconnu',
-            time: recipeCard.querySelector('.tag.time')?.textContent || 'Inconnu',
-            difficulty: recipeCard.querySelector('.tag.difficulty')?.textContent || 'Inconnu',
-            image: recipeCard.querySelector('img')?.src || 'assets/images/placeholder.jpg'
+            title: recipeContainer.querySelector('h2')?.textContent || '',
+            category: recipeContainer.querySelector('.tag.category')?.textContent || 'Inconnu',
+            time: recipeContainer.querySelector('.tag.time')?.textContent || 'Inconnu',
+            difficulty: recipeContainer.querySelector('.tag.difficulty')?.textContent || 'Inconnu',
+            image: recipeContainer.querySelector('img')?.src || 'assets/images/placeholder.jpg'
         };
 
-        const index = favorites.findIndex(fav => fav.title === recipeTitle);
+        const index = favorites.findIndex(fav => fav.title === recipeData.title);
         if (index === -1) {
             favorites.push(recipeData);
             button.textContent = '♥';
             button.setAttribute('aria-label', 'Retirer des favoris');
             button.setAttribute('aria-pressed', 'true');
+            showConfirmationMessage('Recette ajoutée aux favoris !');
         } else {
             favorites.splice(index, 1);
             button.textContent = '♡';
             button.setAttribute('aria-label', 'Ajouter aux favoris');
             button.setAttribute('aria-pressed', 'false');
+            showConfirmationMessage('Recette retirée des favoris !');
         }
 
         localStorage.setItem('favorites', JSON.stringify(favorites));
@@ -105,17 +114,30 @@ document.querySelectorAll('.favorite-toggle').forEach(button => {
 function updateFavoritesSection() {
     const favoritesSection = document.querySelector('.favorites-section');
     const noFavoritesMessage = document.querySelector('#no-favorites-message');
-    const recipesGrid = document.createElement('div');
-    recipesGrid.classList.add('recipes-grid');
+    let recipesGrid = favoritesSection.querySelector('.recipes-grid');
 
-    if (favorites.length === 0) {
+    if (!recipesGrid) {
+        recipesGrid = document.createElement('div');
+        recipesGrid.classList.add('recipes-grid');
+        favoritesSection.appendChild(recipesGrid);
+    }
+
+  if (favorites.length === 0) {
+    if (noFavoritesMessage) {
         noFavoritesMessage.style.display = 'block';
-        if (favoritesSection.querySelector('.recipes-grid')) {
-            favoritesSection.querySelector('.recipes-grid').remove();
-        }
-    } else {
+    }
+    recipesGrid.innerHTML = '';
+} else {
+    if (noFavoritesMessage) {
         noFavoritesMessage.style.display = 'none';
+    }
+    recipesGrid.innerHTML = '';
+
         favorites.forEach(recipe => {
+            if (!recipe.title || !recipe.category || !recipe.time || !recipe.difficulty || !recipe.image) {
+                return; // Ignore les recettes mal formées
+            }
+
             const recipeCard = document.createElement('article');
             recipeCard.classList.add('recipes-card');
 
@@ -138,11 +160,6 @@ function updateFavoritesSection() {
             recipesGrid.appendChild(recipeCard);
         });
 
-        if (favoritesSection.querySelector('.recipes-grid')) {
-            favoritesSection.querySelector('.recipes-grid').remove();
-        }
-        favoritesSection.appendChild(recipesGrid);
-
         recipesGrid.querySelectorAll('.favorite-toggle').forEach(button => {
             button.addEventListener('click', () => {
                 const recipeTitle = button.closest('.recipes-card').querySelector('h2').textContent;
@@ -153,6 +170,7 @@ function updateFavoritesSection() {
                     button.setAttribute('aria-label', 'Ajouter aux favoris');
                     button.setAttribute('aria-pressed', 'false');
                     localStorage.setItem('favorites', JSON.stringify(favorites));
+                    showConfirmationMessage('Recette retirée des favoris !');
                     updateFavoritesSection();
                 }
             });
@@ -160,9 +178,12 @@ function updateFavoritesSection() {
     }
 }
 
-if (document.querySelector('.favorites-section')) {
-    updateFavoritesSection();
-}
+document.addEventListener('DOMContentLoaded', () => {
+    if (document.querySelector('.favorites-section')) {
+        updateFavoritesSection();
+    }
+});
+// === Messages de confirmation ===
 function showConfirmationMessage(message, isSuccess = true) {
     const messageDiv = document.createElement('div');
     messageDiv.textContent = message;
@@ -191,4 +212,28 @@ function showConfirmationMessage(message, isSuccess = true) {
             messageDiv.remove();
         }, 300);
     }, 3000);
+}
+
+// === Validation du formulaire de contact ===
+const contactForm = document.querySelector('#contact-form');
+if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const name = contactForm.querySelector('#contact-name').value.trim();
+        const email = contactForm.querySelector('#contact-email').value.trim();
+        const message = contactForm.querySelector('#contact-message').value.trim();
+
+        if (name === '' || email === '' || message === '') {
+            showConfirmationMessage('Veuillez remplir tous les champs.', false);
+            return;
+        }
+
+        if (!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email)) {
+            showConfirmationMessage('Veuillez entrer un email valide.', false);
+            return;
+        }
+
+        showConfirmationMessage('Message envoyé avec succès !');
+        contactForm.reset();
+    });
 }

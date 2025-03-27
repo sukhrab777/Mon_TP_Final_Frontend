@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="GourmeTech - Mes recettes favorites">
+    <meta name="author" content="GourmeTech Team">
     <title>GourmeTech - Favoris</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/styles.css">
     <script src="js/scripts.js" defer></script>
     <script src="js/autres_fichiers.js" defer></script>
 </head>
+
 <body>
     <header>
         <div class="header-container">
@@ -16,22 +20,22 @@
                 <div class="logo">G</div>
                 <h1><a href="index.html" aria-label="Retour à la page d'accueil">GourmeTech</a></h1>
             </div>
+            <nav id="main-nav" class="hidden">
+                <ul>
+                    <li><a href="index.html" class="active">Accueil</a></li>
+                    <li><a href="favoris.html">Mes favoris</a></li>
+                    <li><a href="a-propos.html">À propos</a></li>
+                </ul>
+            </nav>
             <div class="header-action">
                 <button id="theme-toggle" aria-label="Changer de thème">
                     <span class="moon-icon">🌙</span>
                 </button>
-                <button id="nav-toggle" aria-label="Menu de navigation">
+                <button id="nav-toggle" aria-label="Menu de navigation" aria-expanded="false">
                     <span class="menu-icon">☰</span>
                 </button>
             </div>
         </div>
-        <nav id="main-nav" class="hidden">
-            <ul>
-                <li><a href="index.html">Accueil</a></li>
-                <li><a href="favoris.html" class="active">Mes favoris</a></li>
-                <li><a href="a-propos.html">A propos</a></li>
-            </ul>
-        </nav>
     </header>
     <main>
         <section class="search-section">
@@ -39,33 +43,46 @@
                 <input type="text" id="recipe-search" placeholder="Rechercher une recette...">
                 <button id="search-button">Rechercher</button>
             </div>
-            <div class="filters-section">
+            <div class="filters-section" aria-label="Filtres de recherche de recettes">
                 <h2 class="sr-only">Filtres de recettes</h2>
                 <div class="filter-group">
                     <h3>Catégorie</h3>
                     <div class="filter-options">
                         <label>
-                            <input type="checkbox" name="categorie" value="entree">Entrée
+                            <input type="checkbox" name="categorie" value="entree"> Entrée
                         </label>
                         <label>
-                            <input type="checkbox" name="categorie" value="plat">Plat
+                            <input type="checkbox" name="categorie" value="plat"> Plat
                         </label>
                         <label>
-                            <input type="checkbox" name="categorie" value="desert">Dessert
+                            <input type="checkbox" name="categorie" value="dessert"> Dessert
                         </label>
+                    </div>
+                </div>
+                <div class="filter-group">
+                    <h3>Temps de préparation</h3>
+                    <div class="filter-options">
+                        <label>
+                            <input type="checkbox" name="prep-time" value="rapide"> Rapide (< 30 min) </label>
+                                <label>
+                                    <input type="checkbox" name="prep-time" value="moyen"> Moyen (30-60 min)
+                                </label>
+                                <label>
+                                    <input type="checkbox" name="prep-time" value="long"> Long (> 60 min)
+                                </label>
                     </div>
                 </div>
                 <div class="filter-group">
                     <h3>Niveau de difficulté</h3>
                     <div class="filter-options">
                         <label>
-                            <input type="checkbox" name="difficulty" value="facile">Facile
+                            <input type="checkbox" name="difficulty" value="facile"> Facile
                         </label>
                         <label>
-                            <input type="checkbox" name="difficulty" value="moyen">Moyen
+                            <input type="checkbox" name="difficulty" value="moyen"> Moyen
                         </label>
                         <label>
-                            <input type="checkbox" name="difficulty" value="difficile">Difficile
+                            <input type="checkbox" name="difficulty" value="difficile"> Difficile
                         </label>
                     </div>
                 </div>
@@ -87,9 +104,11 @@
         </div>
         <div class="footer-about">
             <h3>À propos de GourmeTech</h3>
-            <p>GourmeTech est une plateforme de recettes culinaires interactive développée dans le cadre d’un projet pédagogique.</p>
+            <p>GourmeTech est une plateforme de recettes culinaires interactive développée dans le cadre d’un projet
+                pédagogique.</p>
             <p>© 2025 GourmeTech - Tous droits réservés</p>
         </div>
     </footer>
 </body>
+
 </html>
